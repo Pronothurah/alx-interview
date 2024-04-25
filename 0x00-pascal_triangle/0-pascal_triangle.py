@@ -5,18 +5,15 @@
 def pascal_triangle(n):
     """ returns a list of lists of integers representing
     the Pascal’s triangle of n"""
+    triangle = []
     if n < 1 or not isinstance(n, int):
-        print("Input must be positive and an integer!")
-        return None
-    if n == 1:
-        return [[1]]
-    if n == 2:
-        return [[1], [1, 1]]
-    triangle = [[1], [1, 1]]
-    for i in range(3, n + 1):
-        row = [1] + [0] * (i - 2) + [1]
-        prev_row = triangle[-1]
-        for j in range(1, len(prev_row)):
-            row[j] = prev_row[j - 1] + prev_row[j]
+        return triangle
+    for i in range(n):
+        row = []
+        for j in range(i + 1):
+            if j == 0 or j == i:
+                row.append(1)
+            elif i > 0 and j > 0:
+                row.append(triangle[i - 1][j - 1] + triangle[i - 1][j])
         triangle.append(row)
     return triangle
