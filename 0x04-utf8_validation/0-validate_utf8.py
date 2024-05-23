@@ -32,5 +32,6 @@ def validUTF8(data):
                 return False
         n_bytes -= 1
 
-    # If n_bytes is not zero at the end, it means we have an incomplete character
+    # If n_bytes is not zero at the end,
+    # it means we have an incomplete character
     return n_bytes == 0
