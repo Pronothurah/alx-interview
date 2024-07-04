@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Prime Game Module"""
 
+
 def isWinner(x, nums):
     """Determines the winner of a prime game session with `x` rounds."""
     if x == 0 or not nums:
